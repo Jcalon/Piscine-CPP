@@ -6,7 +6,7 @@
 #    By: jcalon <jcalon@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/09 16:52:15 by jcalon            #+#    #+#              #
-#    Updated: 2022/08/24 18:43:03 by jcalon           ###   ########.fr        #
+#    Updated: 2022/08/25 15:34:09 by jcalon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,10 +16,10 @@ SRCS 	= main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 
 OBJS 	= ${SRCS:.cpp=.o}
 
-CC 		= clang++
+CC 		= c++
 CFLAGS 	= -Wall -Wextra -Werror -std=c++98
 
-.c.o:
+.cpp.o:
 		@${CC} ${CFLAGS} -c -o $@ $<
 
 all: 	${NAME}
