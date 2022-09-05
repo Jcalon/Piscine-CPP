@@ -6,7 +6,7 @@
 /*   By: jcalon <jcalon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 12:47:04 by jcalon            #+#    #+#             */
-/*   Updated: 2022/08/10 15:29:49 by jcalon           ###   ########.fr       */
+/*   Updated: 2022/09/05 19:43:47 by jcalon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	Account::makeDeposit( int deposit )
     _nbDeposits++;
     _totalAmount += deposit;
     _amount += deposit;
-	std::cout << "index:" << _accountIndex << ";p_amount:" << _amount - deposit << ";deposits:" << deposit << ";amount:" << _amount << ";nb_deposits:" << _nbDeposits << std::endl;
+	std::cout << "index:" << _accountIndex << ";p_amount:" << _amount - deposit << ";deposit:" << deposit << ";amount:" << _amount << ";nb_deposits:" << _nbDeposits << std::endl;
 }
 
 bool	Account::makeWithdrawal( int withdrawal )
@@ -82,7 +82,7 @@ bool	Account::makeWithdrawal( int withdrawal )
 		_nbWithdrawals++;
 		_totalAmount -= withdrawal;
 		_amount -= withdrawal;
-		std::cout << "index:" << _accountIndex << ";p_amount:" << _amount + withdrawal << ";withdrawals:" << withdrawal << ";amount:" << _amount << ";nb_withdrawals:" << _nbWithdrawals << std::endl;
+		std::cout << "index:" << _accountIndex << ";p_amount:" << _amount + withdrawal << ";withdrawal:" << withdrawal << ";amount:" << _amount << ";nb_withdrawals:" << _nbWithdrawals << std::endl;
 		return true;
 	}
 	else
@@ -105,5 +105,18 @@ void	Account::displayStatus( void ) const
 
 void	Account::_displayTimestamp( void )
 {
-    std::cout << "[20220810_091532] ";
+	time_t rawtime;
+ 	struct tm * timeinfo;
+
+  	time (&rawtime);
+  	timeinfo = localtime (&rawtime);
+	std::cout << "[" << timeinfo->tm_year + 1900;
+	if (timeinfo->tm_mon + 1 > 9)
+		std::cout << timeinfo->tm_mon + 1;
+	else
+		std::cout << "0" << timeinfo->tm_mon + 1;
+	if (timeinfo->tm_mday > 9)
+		std::cout << timeinfo->tm_mday << "_091532] ";
+	else
+		std::cout << "0" << timeinfo->tm_mday << "_091532] ";
 }

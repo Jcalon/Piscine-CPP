@@ -6,7 +6,7 @@
 /*   By: jcalon <jcalon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 18:42:36 by jcalon            #+#    #+#             */
-/*   Updated: 2022/08/10 12:13:02 by jcalon           ###   ########.fr       */
+/*   Updated: 2022/09/05 18:29:28 by jcalon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,38 @@ Contact::~Contact(void)
 	
 }
 
+std::string Contact::get_firstName(void) const
+{
+	return (this->_firstName);
+}
+
+std::string Contact::get_lastName(void) const
+{
+	return (this->_lastName);
+}
+
+std::string Contact::get_nickName(void) const
+{
+	return (this->_nickName);
+}
+
+std::string Contact::get_phoneNumber(void) const
+{
+	return (this->_phoneNumber);
+}
+
+std::string Contact::get_darkestSecret(void) const
+{
+	return (this->_darkestSecret);
+}
+
 void	Contact::create_contact(int index)
 {
 	_index = index;
 	std::cout << "Fill the following informations :" << std::endl;
 	std::cout << "FIRST NAME : >" ;
 	std::getline(std::cin, _firstName);
-	std::cout << "Last NAME : >" ;
+	std::cout << "LAST NAME : >" ;
 	std::getline(std::cin, _lastName);
 	std::cout << "NICKNAME : >" ;
 	std::getline(std::cin, _nickName);
@@ -63,4 +88,5 @@ void	Contact::display_infos(void)
 	std::cout << "NICKNAME : " << _nickName << std::endl;
 	std::cout << "PHONE NUMBER : " << _phoneNumber << std::endl;
 	std::cout << "DARKEST SECRET : " << _darkestSecret << std::endl;
+	std::cout << std::endl << "Tapez ADD pour ajouter un contact, SEARCH ou EXIT" << std::endl;
 }

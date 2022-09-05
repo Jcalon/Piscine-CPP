@@ -6,7 +6,7 @@
 /*   By: jcalon <jcalon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 18:05:53 by jcalon            #+#    #+#             */
-/*   Updated: 2022/08/10 12:25:10 by jcalon           ###   ########.fr       */
+/*   Updated: 2022/09/05 18:22:04 by jcalon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,13 @@ class Contact {
 		void	create_contact(int);
 		void	display_contact(void);
 		void	display_infos(void);
+
+		std::string get_firstName(void) const;
+		std::string get_lastName(void) const;
+		std::string get_nickName(void) const;
+		std::string get_phoneNumber(void) const;
+		std::string get_darkestSecret(void) const;
+
 };
 
 #endif
