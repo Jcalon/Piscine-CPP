@@ -6,7 +6,7 @@
 /*   By: jcalon <jcalon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 17:25:46 by jcalon            #+#    #+#             */
-/*   Updated: 2022/08/10 17:44:44 by jcalon           ###   ########.fr       */
+/*   Updated: 2022/09/05 15:44:22 by jcalon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,12 @@ class Weapon
 		std::string	_type;
 
 	public :
+		Weapon(void);
 		Weapon(std::string type);
 		~Weapon(void);
 
-		void		setType(std::string type);
-		const std::string	&getType(void);
+		std::string const	&getType(void);
+		void				setType(std::string type);
 };
 
 #endif

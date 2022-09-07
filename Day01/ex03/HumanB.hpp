@@ -6,7 +6,7 @@
 /*   By: jcalon <jcalon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 17:42:09 by jcalon            #+#    #+#             */
-/*   Updated: 2022/08/10 17:52:12 by jcalon           ###   ########.fr       */
+/*   Updated: 2022/09/05 15:32:02 by jcalon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class HumanB
 		Weapon		*_weapon;
 
 	public :
+		HumanB(void);
 		HumanB(std::string name);
 		~HumanB(void);
 

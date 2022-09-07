@@ -6,7 +6,7 @@
 /*   By: jcalon <jcalon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 13:21:40 by jcalon            #+#    #+#             */
-/*   Updated: 2022/08/25 17:03:51 by jcalon           ###   ########.fr       */
+/*   Updated: 2022/09/07 17:11:28 by jcalon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Dog::Dog(void): Animal("Dog")
 	this->_brain = new Brain;
 }
 
-Dog::Dog(Dog const & src)
+Dog::Dog(Dog const & src): Animal(src)
 {
 	*this = src;
 	std::cout << "Dog duplicated !" << std::endl;
@@ -47,13 +47,16 @@ Brain *Dog::getBrain(void) const
 	return (this->_brain);
 }
 
-void Dog::getIdeas(void)
+std::string Dog::getIdea(void)
 {
-	for (int i = 0; i < 100; i++)
-		std::cout << getBrain()->_ideas[i] << std::endl;
+	return NULL;
 }
 
-void Dog::getIdea(int i)
+std::string Dog::getIdea(int i)
 {
-	std::cout << getBrain()->_ideas[i] << std::endl;
+	if (i >= 0 && i < 100)
+		return getBrain()->_ideas[i];
+	else
+		return NULL;
 }
+

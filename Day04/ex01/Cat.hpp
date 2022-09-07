@@ -6,7 +6,7 @@
 /*   By: jcalon <jcalon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 12:53:05 by jcalon            #+#    #+#             */
-/*   Updated: 2022/08/25 17:00:38 by jcalon           ###   ########.fr       */
+/*   Updated: 2022/09/07 17:06:17 by jcalon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ class Cat : public Animal
 
 		virtual void makeSound(void) const;
 		virtual Brain *getBrain(void) const;
-		virtual void getIdeas(void);
-		virtual void getIdea(int index);
+		virtual std::string getIdea(int index);
+		virtual std::string getIdea(void);
 };
 
 #endif

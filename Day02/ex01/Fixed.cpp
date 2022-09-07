@@ -6,33 +6,33 @@
 /*   By: jcalon <jcalon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 12:55:34 by jcalon            #+#    #+#             */
-/*   Updated: 2022/08/24 14:52:50 by jcalon           ###   ########.fr       */
+/*   Updated: 2022/09/07 12:38:16 by jcalon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed( void ): _rawbits(0)
+Fixed::Fixed(void): _rawbits(0)
 {
 	std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed( Fixed const & src )
+Fixed::Fixed(Fixed const & src)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = src;
 }
 
-Fixed::Fixed( int const integer )
+Fixed::Fixed(int const integer)
 {
 	std::cout << "Int constructor called" << std::endl;
-	_rawbits = integer << Fixed::_fractionalbitspart;
+	this->_rawbits = integer << Fixed::_fractionalbitspart;
 }
 
-Fixed::Fixed( float const floatingpoint )
+Fixed::Fixed(float const floatingpoint)
 {
 	std::cout << "Float constructor called" << std::endl;
-	_rawbits = (int)roundf(floatingpoint * (1 << _fractionalbitspart));
+	this->_rawbits = (int)roundf(floatingpoint * (1 << Fixed::_fractionalbitspart));
 }
 
 Fixed::~Fixed()
@@ -40,10 +40,10 @@ Fixed::~Fixed()
 	std::cout << "Destructor called" << std::endl;
 }
 
-Fixed & Fixed::operator=( Fixed const & rhs )
+Fixed & Fixed::operator=(Fixed const & rhs)
 {
-	std::cout << "Assignation operator called" << std::endl;
-	_rawbits = rhs.getRawBits();
+	std::cout << "Copy assignment operator called" << std::endl;
+	this->_rawbits = rhs.getRawBits();
 	return *this;
 }
 
@@ -53,24 +53,24 @@ std::ostream & operator<<(std::ostream & o, Fixed const & i)
 	return o;
 }
 
-void	Fixed::setRawBits( int const raw )
+void	Fixed::setRawBits(int const raw)
 {
-	_rawbits = raw;
+	this->_rawbits = raw;
 }
 
-int	Fixed::getRawBits( void ) const
+int	Fixed::getRawBits(void) const
 {
-	return _rawbits;
+	return this->_rawbits;
 }
 
-int	Fixed::toInt( void ) const
+int	Fixed::toInt(void) const
 {
-	return (_rawbits >> Fixed::_fractionalbitspart);
+	return (this->_rawbits >> Fixed::_fractionalbitspart);
 }
 
-float	Fixed::toFloat( void ) const
+float	Fixed::toFloat(void) const
 {
-	return ((float)_rawbits / (float)(1 << _fractionalbitspart));
+	return ((float)this->_rawbits / (float)(1 << _fractionalbitspart));
 }
 
 int const	Fixed::_fractionalbitspart = 8;

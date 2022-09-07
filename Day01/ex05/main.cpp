@@ -6,19 +6,19 @@
 /*   By: jcalon <jcalon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 19:26:57 by jcalon            #+#    #+#             */
-/*   Updated: 2022/08/10 20:07:14 by jcalon           ###   ########.fr       */
+/*   Updated: 2022/09/06 16:10:09 by jcalon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-int	main(int argc, char **argv[])
+int	main(void)
 {
 	Harl harl;
 
-	harl.complain("debug");
-	harl.complain("info");
-	harl.complain("warning");
-	harl.complain("error");
+	harl.complain("DEBUG");
+	harl.complain("INFO");
+	harl.complain("WARNING");
+	harl.complain("ERROR");
 	return (0);
 }

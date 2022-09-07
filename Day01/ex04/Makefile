@@ -6,7 +6,7 @@
 #    By: jcalon <jcalon@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/09 16:52:15 by jcalon            #+#    #+#              #
-#    Updated: 2022/08/25 15:33:03 by jcalon           ###   ########.fr        #
+#    Updated: 2022/09/07 12:17:57 by jcalon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,24 +16,29 @@ SRCS 	= main.cpp Replace.cpp
 
 OBJS 	= ${SRCS:.cpp=.o}
 
-CC 		= c++
-CFLAGS 	= -Wall -Wextra -Werror -std=c++98
+DEP		= ${SRCS:.cpp=.d}
+
+CXX 		= c++
+CXXFLAGS 	= -Wall -Wextra -Werror -std=c++98 -MMD
 
 .cpp.o:
-		@${CC} ${CFLAGS} -c -o $@ $<
+		${CXX} ${CXXFLAGS} -c -o $@ $<
 
 all: 	${NAME}
 
-${NAME}: ${OBJS}
-		@$(CC) $(CFLAGS) ${OBJS} -o ${NAME}
+${NAME}: Makefile ${OBJS} 
+		$(CXX) $(CXXFLAGS) ${OBJS} -o ${NAME}
 		@echo "\nCompiled!\n"
 
+-include $(DEP)
+
 clean:
-		@rm -f ${OBJS}
+		rm -f ${OBJS}
+		rm -f ${DEP}
 
 fclean: clean
-		@rm -f $(NAME)
-		@echo "\nDeleting EVERYTHING!\n"
+		rm -f $(NAME)
+		@echo "\nEverything deleted!\n"
 
 re:		fclean all
 

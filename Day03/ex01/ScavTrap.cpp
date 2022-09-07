@@ -6,7 +6,7 @@
 /*   By: jcalon <jcalon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 17:52:20 by jcalon            #+#    #+#             */
-/*   Updated: 2022/08/24 18:28:51 by jcalon           ###   ########.fr       */
+/*   Updated: 2022/09/07 15:08:33 by jcalon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,28 @@
 
 ScavTrap::ScavTrap(void)
 {
-	std::cout << "ScavTrap " << getName() << " called !" << std::endl;
-	setHitPoints(100);
-	setEnergyPoints(50);
-	setAttackDamage(20);
+	std::cout << "ScavTrap " << this->getName() << " called!" << std::endl;
+	this->setHitPoints(100);
+	this->setEnergyPoints(50);
+	this->setAttackDamage(20);
 }
 
 ScavTrap::ScavTrap(ScavTrap const & src): ClapTrap(src)
 {
-	std::cout << "A copy of ScavTrap " << getName() << " has appeared!" << std::endl;
+	std::cout << "A copy of ScavTrap " << this->getName() << " has appeared!" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name): ClapTrap(name)
 {
-	std::cout << "ScavTrap " << getName() << " has appeared!" << std::endl;
-	setHitPoints(100);
-	setEnergyPoints(50);
-	setAttackDamage(20);
+	std::cout << "ScavTrap " << this->getName() << " has appeared!" << std::endl;
+	this->setHitPoints(100);
+	this->setEnergyPoints(50);
+	this->setAttackDamage(20);
 }
 
 ScavTrap::~ScavTrap(void)
 {
-	std::cout << "ScavTrap " << getName() << " has disappeared..." << std::endl;
+	std::cout << "ScavTrap " << this->getName() << " has disappeared..." << std::endl;
 }
 
 ScavTrap & ScavTrap::operator=(ScavTrap const & rhs)
@@ -46,7 +46,7 @@ ScavTrap & ScavTrap::operator=(ScavTrap const & rhs)
 
 void	ScavTrap::guardGate(void)
 {
-	std::cout << "ScavTrap " << getName() << " is now in gate keeper mode !!!" << std::endl;
+	std::cout << "ScavTrap " << this->getName() << " is now in gate keeper mode !!!" << std::endl;
 }
 
 std::ostream & operator<<(std::ostream & o, ScavTrap const & i)

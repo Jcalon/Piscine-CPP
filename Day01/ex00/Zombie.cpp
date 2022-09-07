@@ -6,20 +6,20 @@
 /*   By: jcalon <jcalon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 16:05:18 by jcalon            #+#    #+#             */
-/*   Updated: 2022/08/10 16:19:50 by jcalon           ###   ########.fr       */
+/*   Updated: 2022/09/07 12:01:01 by jcalon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(void)
+Zombie::Zombie(void): _name("nameless")
 {
-
+	std::cout << "A zombie has spawn..." << std::endl;
 }
 
 Zombie::Zombie(std::string name): _name(name)
 {
-	
+	std::cout << _name << " the zombie has spawn..." << std::endl;
 }
 
 Zombie::~Zombie(void)

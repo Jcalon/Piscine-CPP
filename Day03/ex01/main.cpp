@@ -6,7 +6,7 @@
 /*   By: jcalon <jcalon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 14:19:30 by jcalon            #+#    #+#             */
-/*   Updated: 2022/08/24 18:32:01 by jcalon           ###   ########.fr       */
+/*   Updated: 2022/09/07 15:03:53 by jcalon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main(void)
 	ScavTrap	scavRobot("Scavy");
 	ScavTrap	anonymusScav;
 	ScavTrap	copyScav(scavRobot);
-	std::cout << scavRobot << std::endl;
+	std::cout << std::endl << scavRobot << std::endl;
 	std::cout << littleRobot << std::endl;
 	scavRobot.attack("littleRobot");
 	littleRobot.takeDamage(scavRobot.getAttackDamage());

@@ -6,7 +6,7 @@
 /*   By: jcalon <jcalon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 12:52:25 by jcalon            #+#    #+#             */
-/*   Updated: 2022/08/25 14:01:10 by jcalon           ###   ########.fr       */
+/*   Updated: 2022/09/07 16:16:17 by jcalon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int main()
 	const WrongAnimal* wrongmeta = new WrongAnimal();
 	const Animal* i = new Dog();
 	const Animal* j = new Cat();
+	// const Cat *m = new Animal();
 	const WrongAnimal* k = new WrongCat();
 	const WrongCat* l = new WrongCat();
 

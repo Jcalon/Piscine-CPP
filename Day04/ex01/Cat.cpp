@@ -6,7 +6,7 @@
 /*   By: jcalon <jcalon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 12:52:44 by jcalon            #+#    #+#             */
-/*   Updated: 2022/08/25 17:03:34 by jcalon           ###   ########.fr       */
+/*   Updated: 2022/09/07 17:11:15 by jcalon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 Cat::Cat(void): Animal("Cat")
 {
-	std::cout << "New Cat created !" << std::endl;
 	this->_brain = new Brain;
+	std::cout << "New Cat created !" << std::endl;
 }
 
-Cat::Cat(Cat const & src)
+Cat::Cat(Cat const & src): Animal(src)
 {
 	*this = src;
 	std::cout << "Cat duplicated !" << std::endl;
@@ -26,8 +26,8 @@ Cat::Cat(Cat const & src)
 
 Cat::~Cat(void)
 {
-	delete this->_brain;
 	std::cout << "Cat destroyed..." << std::endl;
+	delete this->_brain;
 }
 
 Cat & Cat::operator=(Cat const & rhs)
@@ -47,13 +47,15 @@ Brain *Cat::getBrain(void) const
 	return (this->_brain);
 }
 
-void Cat::getIdeas(void)
+std::string Cat::getIdea(void)
 {
-	for (int i = 0; i < 100; i++)
-		std::cout << getBrain()->_ideas[i] << std::endl;
+	return NULL;
 }
 
-void Cat::getIdea(int i)
+std::string Cat::getIdea(int i)
 {
-	std::cout << getBrain()->_ideas[i] << std::endl;
+	if (i >= 0 && i < 100)
+		return getBrain()->_ideas[i];
+	else
+		return NULL;
 }

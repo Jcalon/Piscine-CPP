@@ -6,7 +6,7 @@
 /*   By: jcalon <jcalon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 14:19:30 by jcalon            #+#    #+#             */
-/*   Updated: 2022/08/24 18:42:24 by jcalon           ###   ########.fr       */
+/*   Updated: 2022/09/07 15:14:03 by jcalon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 
 int main(void)
 {
-	ClapTrap	littleRobot("littleRobot");
+	ScavTrap	littleRobot("littleRobot");
 	FragTrap	FragRobot("Fragy");
 	FragTrap	anonymusFrag;
 	FragTrap	copyFrag(FragRobot);
-	std::cout << FragRobot << std::endl;
+	std::cout << std::endl << FragRobot << std::endl;
 	std::cout << littleRobot << std::endl;
 	FragRobot.attack("littleRobot");
 	littleRobot.takeDamage(FragRobot.getAttackDamage());
-	std::cout << FragRobot << std::endl;
+	std::cout << std::endl << FragRobot << std::endl;
 	std::cout << littleRobot << std::endl;
 	anonymusFrag.highFiveGuys();
 	

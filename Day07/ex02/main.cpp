@@ -3,15 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: crazyd <crazyd@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jcalon <jcalon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 21:47:40 by crazyd            #+#    #+#             */
-/*   Updated: 2022/08/30 00:37:18 by crazyd           ###   ########.fr       */
+/*   Updated: 2022/09/06 16:58:52 by jcalon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Array.hpp"
+
+int	print_array(const Array<int> arr, int size)
+{
+	for (int i = 0; i < size; i++)
+		std::cout << arr[i];
+	return (0);
+}
 
 #define MAX_VAL 750
 int main(int, char**)
@@ -61,5 +68,10 @@ int main(int, char**)
         numbers[i] = rand();
     }
     delete [] mirror;//
+	
+	Array<int>	arr1(3);
+	
+	arr1[1] = 42;
+	print_array(arr1, 3);
     return 0;
 }

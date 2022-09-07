@@ -6,7 +6,7 @@
 /*   By: jcalon <jcalon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 19:26:57 by jcalon            #+#    #+#             */
-/*   Updated: 2022/08/10 20:08:19 by jcalon           ###   ########.fr       */
+/*   Updated: 2022/09/07 14:40:02 by jcalon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,58 +18,14 @@
 int	main(int argc, char *argv[])
 {
 	if (argc != 2)
+	{
+		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 		return (0);
+	}
 
 	Harl harl;
-	std::map<std::string, int>    filter;
 
-    filter["INFO"] = 1;
-    filter["DEBUG"] = 2;
-    filter["WARNING"] = 3;
-    filter["ERROR"] = 4;
-	switch(filter[argv[1]])
-	{
-        case 1:
-        {
-            std::cout << "[ INFO ]" << std::endl;
-            harl.complain("info");
-            std::cout << "[ DEBUG ]" << std::endl;
-            harl.complain("debug");
-            std::cout << "[ WARNING ]" << std::endl;
-            harl.complain("warning");
-            std::cout << "[ ERROR ]" << std::endl;
-            harl.complain("error");
-            break;
-        }
-        case 2:
-        {
-            std::cout << "[ DEBUG ]" << std::endl;
-            harl.complain("debug");
-            std::cout << "[ WARNING ]" << std::endl;
-            harl.complain("warning");
-            std::cout << "[ ERROR ]" << std::endl;
-            harl.complain("error");
-            break;
-        }
-        case 3:
-        {
-            std::cout << "[ WARNING ]" << std::endl;
-            harl.complain("warning");
-            std::cout << "[ ERROR ]" << std::endl;
-            harl.complain("error");
-            break;
-        }
-        case 4:
-        {
-            std::cout << "[ ERROR ]" << std::endl;
-            harl.complain("error");
-            break;
-        }
-        default: 
-        {
-            std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-            break;
-        }
-	}
+	harl.complain(argv[1]);
+
 	return (0);
 }

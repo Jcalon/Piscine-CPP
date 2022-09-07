@@ -6,7 +6,7 @@
 /*   By: jcalon <jcalon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 12:53:24 by jcalon            #+#    #+#             */
-/*   Updated: 2022/08/25 17:00:50 by jcalon           ###   ########.fr       */
+/*   Updated: 2022/09/07 17:02:36 by jcalon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ class Animal
 
 		virtual void makeSound(void) const;
 		std::string getType(void) const;
-		virtual void getIdeas(void);
-		virtual void getIdea(int index);
+		virtual std::string getIdea(int index);
+		virtual std::string getIdea(void);
 
 };
 

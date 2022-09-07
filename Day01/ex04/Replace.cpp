@@ -6,7 +6,7 @@
 /*   By: jcalon <jcalon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 18:38:30 by jcalon            #+#    #+#             */
-/*   Updated: 2022/08/10 19:21:56 by jcalon           ###   ########.fr       */
+/*   Updated: 2022/09/07 14:46:19 by jcalon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void      Replace::do_replace(void)
 		{
 			_buffer.erase(i, _oldString.length());
 			_buffer.insert(i, _newString);
+			i += _oldString.length();
 		}
 	}
 }
@@ -39,8 +40,11 @@ void	Replace::replace_string(void)
 	std::string	line;
 
 	if (_newString.length() == 0 || _oldString.length() == 0 || _file.length() == 0)
+	{
 		std::cout << "One argument is empty" << std::endl;
-	_in.open(_file);
+		return ;	
+	}
+	_in.open(_file.c_str());
 	if (!_in)
 	{
 		std::cout << "Error opening the input file" << std::endl;
@@ -54,7 +58,7 @@ void	Replace::replace_string(void)
 	}
 	_in.close();
 	do_replace();
-	_out.open(_fileReplace);
+	_out.open(_fileReplace.c_str());
 	if (!_out)
 	{
 		std::cout << "Error opening the output file" << std::endl;

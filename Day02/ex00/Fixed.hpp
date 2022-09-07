@@ -6,7 +6,7 @@
 /*   By: jcalon <jcalon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 12:57:37 by jcalon            #+#    #+#             */
-/*   Updated: 2022/08/24 17:53:22 by jcalon           ###   ########.fr       */
+/*   Updated: 2022/09/06 17:28:05 by jcalon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,17 @@
 class Fixed
 {
 	private :
-		int	_rawbits;
+		int					_rawbits;
 		static int const	_fractionalbitspart;
 
 	public :
-		Fixed( void );
-		Fixed( Fixed const & src );
-		Fixed & operator=( Fixed const & rhs );
-		~Fixed( void );
+		Fixed(void);
+		Fixed(Fixed const & src);
+		Fixed & operator=(Fixed const & rhs);
+		~Fixed(void);
 
-		int	getRawBits( void ) const;
-		void	setRawBits( int const raw );
+		int		getRawBits(void) const;
+		void	setRawBits(int const raw);
 };
 
 #endif

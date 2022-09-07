@@ -6,7 +6,7 @@
 /*   By: jcalon <jcalon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 13:04:23 by jcalon            #+#    #+#             */
-/*   Updated: 2022/08/25 17:05:16 by jcalon           ###   ########.fr       */
+/*   Updated: 2022/09/07 17:02:12 by jcalon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,14 +55,13 @@ std::ostream & operator<<(std::ostream & o, Animal const & i)
 	return (o);
 }
 
-void Animal::getIdeas(void)
+std::string Animal::getIdea(void)
 {
-	for (int i = 0; i < 100; i++)
-		std::cout << "NOT ALL ANIMALS HAS BRAIN" << std::endl;
+	return ("NOT ALL ANIMALS HAS BRAIN");
 }
 
-void Animal::getIdea(int i)
+std::string Animal::getIdea(int i)
 {
 	(void)i;
-	std::cout << "NOT ALL ANIMALS HAS BRAIN" << std::endl;
+	return ("NOT ALL ANIMALS HAS BRAIN");
 }

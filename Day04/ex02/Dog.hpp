@@ -6,7 +6,7 @@
 /*   By: jcalon <jcalon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 13:02:43 by jcalon            #+#    #+#             */
-/*   Updated: 2022/08/25 17:00:30 by jcalon           ###   ########.fr       */
+/*   Updated: 2022/09/07 17:06:26 by jcalon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ class Dog : public Animal
 
 		virtual void makeSound(void) const;
 		Brain *getBrain(void) const;
-		virtual void getIdeas(void);
-		virtual void getIdea(int index);
+		virtual std::string getIdea(int index);
+		virtual std::string getIdea(void);
 };
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: crazyd <crazyd@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jcalon <jcalon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 20:41:04 by crazyd            #+#    #+#             */
-/*   Updated: 2022/08/29 20:45:36 by crazyd           ###   ########.fr       */
+/*   Updated: 2022/09/06 16:59:22 by jcalon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 template<typename T>
 void	swap(T &rhs, T &lhs)
 {
-	T	tmp;
+	T	&tmp;
 
 	tmp = rhs;
 	rhs = lhs;

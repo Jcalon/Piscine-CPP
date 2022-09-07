@@ -6,7 +6,7 @@
 /*   By: jcalon <jcalon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 12:52:25 by jcalon            #+#    #+#             */
-/*   Updated: 2022/08/25 18:23:46 by jcalon           ###   ########.fr       */
+/*   Updated: 2022/09/07 17:18:26 by jcalon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,15 @@ int main(void)
 
 	std::cout << "\n\n---------STACK + DEEP TEST---------\n\n" << std::endl;
 
+	// Animal test;
 	Dog dog;
 	Cat cat;
-	Cat catCopy(cat);
 	Dog dogCopy(dog);
-	cat.getIdea(5);
-	catCopy.getIdea(5);
-	dog.getIdea(5);
-	dogCopy.getIdea(5);
+	Cat catCopy(cat);
+	std::cout << cat.getIdea(5) << std::endl;
+	std::cout << catCopy.getIdea(5) << std::endl;
+	std::cout << dog.getIdea(5) << std::endl;
+	std::cout << dogCopy.getIdea(5) << std::endl;
 
 	std::cout << "\n\n---------ARRAY TEST---------\n\n" << std::endl;
 
@@ -56,15 +57,9 @@ int main(void)
 	for(int i = 0; i < 4; i++)
 	{
 		animals[i]->makeSound();
-		animals[i]->getIdea(5);
+		std::cout << animals[i]->getIdea(10) << std::endl;
 		delete animals[i];
 	}
 
 	std::cout << "\n\n---------END---------\n\n" << std::endl;
 }
-
-// int main()
-// {
-// 	const Animal* j = new Dog();
-// 	const Animal* i = new Animal();
-// }

@@ -6,7 +6,7 @@
 /*   By: jcalon <jcalon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 12:57:37 by jcalon            #+#    #+#             */
-/*   Updated: 2022/08/24 17:53:48 by jcalon           ###   ########.fr       */
+/*   Updated: 2022/09/07 12:51:18 by jcalon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ class ClapTrap
 		void	setEnergyPoints(unsigned int amount);
 		void	setAttackDamage(unsigned int amount);
 
-		std::string getName(void) const;
+		std::string 	getName(void) const;
 		unsigned int	getHitPoints(void) const;
 		unsigned int	getEnergyPoints(void) const;
 		unsigned int	getAttackDamage(void) const;
