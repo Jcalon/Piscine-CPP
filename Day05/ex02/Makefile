@@ -6,34 +6,45 @@
 #    By: jcalon <jcalon@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/09 16:52:15 by jcalon            #+#    #+#              #
-#    Updated: 2022/08/26 16:05:46 by jcalon           ###   ########.fr        #
+#    Updated: 2022/09/09 14:52:01 by jcalon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= concreteform
 
-SRCS 	= main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
+SRC 	= main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
 
-OBJS 	= ${SRCS:.cpp=.o}
+INCLUDES = -I includes
 
-CC 		= c++
-CFLAGS 	= -Wall -Wextra -Werror -std=c++98
+SRCS_PATH = srcs/
 
-.cpp.o:
-		@${CC} ${CFLAGS} -c -o $@ $<
+OBJS_PATH = objs/
+
+SRCS = $(addprefix $(SRCS_PATH), $(SRC))
+
+OBJ 	= ${SRC:.cpp=.o}
+
+OBJS = $(addprefix $(OBJS_PATH), $(OBJ))
+
+CXX 		= c++
+CXXFLAGS 	= -Wall -Wextra -Werror -std=c++98
 
 all: 	${NAME}
 
-${NAME}: ${OBJS}
-		@$(CC) $(CFLAGS) ${OBJS} -o ${NAME}
+$(OBJS_PATH)%.o: $(SRCS_PATH)%.cpp
+		@mkdir -p $(OBJS_PATH)
+		${CXX} ${CXXFLAGS} ${INCLUDES} -c -o $@ $<
+
+${NAME}: ${OBJS} 
+		$(CXX) $(CXXFLAGS) ${OBJS} ${INCLUDES} -o $@
 		@echo "\nCompiled!\n"
 
 clean:
-		@rm -f ${OBJS}
+		rm -rf ${OBJS_PATH}
 
 fclean: clean
-		@rm -f $(NAME)
-		@echo "\nDeleting EVERYTHING!\n"
+		rm -f $(NAME)
+		@echo "\nEverything deleted!\n"
 
 re:		fclean all
 

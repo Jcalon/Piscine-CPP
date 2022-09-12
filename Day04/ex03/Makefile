@@ -6,35 +6,41 @@
 #    By: jcalon <jcalon@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/09 16:52:15 by jcalon            #+#    #+#              #
-#    Updated: 2022/09/07 15:59:49 by jcalon           ###   ########.fr        #
+#    Updated: 2022/09/09 14:32:14 by jcalon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= interface
 
-SRCS 	= main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
+SRC 	= main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
 
-OBJS 	= ${SRCS:.cpp=.o}
+INCLUDES = -I includes
 
-DEP		= ${SRCS:.cpp=.d}
+SRCS_PATH = srcs/
+
+OBJS_PATH = objs/
+
+SRCS = $(addprefix $(SRCS_PATH), $(SRC))
+
+OBJ 	= ${SRC:.cpp=.o}
+
+OBJS = $(addprefix $(OBJS_PATH), $(OBJ))
 
 CXX 		= c++
 CXXFLAGS 	= -Wall -Wextra -Werror -std=c++98
 
-.cpp.o:
-		${CXX} ${CXXFLAGS} -MMD -c -o $@ $<
-
 all: 	${NAME}
 
-${NAME}: Makefile ${OBJS} 
-		$(CXX) $(CXXFLAGS) -MMD ${OBJS} -o ${NAME}
+$(OBJS_PATH)%.o: $(SRCS_PATH)%.cpp
+		@mkdir -p $(OBJS_PATH)
+		${CXX} ${CXXFLAGS} ${INCLUDES} -c -o $@ $<
+
+${NAME}: ${OBJS} 
+		$(CXX) $(CXXFLAGS) ${OBJS} ${INCLUDES} -o $@
 		@echo "\nCompiled!\n"
 
--include $(DEP)
-
 clean:
-		rm -f ${OBJS}
-		rm -f ${DEP}
+		rm -rf ${OBJS_PATH}
 
 fclean: clean
 		rm -f $(NAME)

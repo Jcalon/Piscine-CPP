@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: crazyd <crazyd@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jcalon <jcalon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 18:32:21 by crazyd            #+#    #+#             */
-/*   Updated: 2022/08/29 20:25:12 by crazyd           ###   ########.fr       */
+/*   Updated: 2022/09/10 16:35:18 by jcalon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,11 @@ class C : public Base {};
 
 Base * generate(void)
 {
-	std::srand((unsigned int)time(NULL));
 	int random_num = rand() % 3;
 
 	if (random_num == 0)
 		return (static_cast<Base *>(new A()));
-	else if (random_num == 0)
+	else if (random_num == 1)
 		return (static_cast<Base *>(new B()));
 	else
 		return (static_cast<Base *>(new C()));
@@ -83,9 +82,12 @@ void identify(Base& p)
 
 int	main(void)
 {
+	std::srand((unsigned int)time(NULL));
 	Base *base = generate();
+	std::cout << "Identification with pointer : ";
 	identify(base);
 	std::cout << std::endl;
+	std::cout << "Identification with reference : " << std::endl;
 	identify(*base);
 	delete base;
 	return (0);

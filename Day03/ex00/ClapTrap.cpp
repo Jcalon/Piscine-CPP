@@ -6,7 +6,7 @@
 /*   By: jcalon <jcalon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 12:55:34 by jcalon            #+#    #+#             */
-/*   Updated: 2022/09/07 15:08:40 by jcalon           ###   ########.fr       */
+/*   Updated: 2022/09/08 19:09:47 by jcalon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,12 @@ std::ostream & operator<<(std::ostream & o, ClapTrap const & i)
 
 void	ClapTrap::attack(const std::string & target)
 {
-	if (this->_energyPoints == 0)
+	if (this->_energyPoints <= 0)
 	{
 		std::cout << "ClapTrap " << this->_name << " is too tired to attack " << target << std::endl;
 		return ;
 	}
-	if (this->_hitPoints == 0)
+	if (this->_hitPoints <= 0)
 	{
 		std::cout << "ClapTrap " << this->_name << " is too broken to attack " << target << std::endl;
 		return ;
@@ -71,7 +71,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	else
 		this->_hitPoints -= amount;
 	std::cout << "ClapTrap " << this->_name << " takes " << amount << " points of damage !" << std::endl;
-	if (this->_hitPoints == 0)
+	if (this->_hitPoints <= 0)
 	{
 		std::cout << "ClapTrap " << this->_name << " is broken..." << std::endl;
 		return ;
@@ -80,12 +80,12 @@ void	ClapTrap::takeDamage(unsigned int amount)
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
-	if (this->_energyPoints == 0)
+	if (this->_energyPoints <= 0)
 	{
 		std::cout << "ClapTrap " << this->_name << " is too tired to repair himself " << std::endl;
 		return ;
 	}
-	if (this->_hitPoints == 0)
+	if (this->_hitPoints <= 0)
 	{
 		std::cout << "ClapTrap " << this->_name << " is too broken to repair himself " << std::endl;
 		return ;

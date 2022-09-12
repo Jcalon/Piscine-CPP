@@ -6,7 +6,7 @@
 /*   By: jcalon <jcalon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 21:47:40 by crazyd            #+#    #+#             */
-/*   Updated: 2022/09/06 16:58:52 by jcalon           ###   ########.fr       */
+/*   Updated: 2022/09/09 17:52:22 by jcalon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,15 @@
 int	print_array(const Array<int> arr, int size)
 {
 	for (int i = 0; i < size; i++)
-		std::cout << arr[i];
+		std::cout << arr[i] << std::endl;
 	return (0);
 }
 
 #define MAX_VAL 750
 int main(int, char**)
 {
+	Array<int> empty;
+	
     Array<int> numbers(MAX_VAL);
     int* mirror = new int[MAX_VAL];
     srand(time(NULL));
@@ -67,11 +69,15 @@ int main(int, char**)
     {
         numbers[i] = rand();
     }
-    delete [] mirror;//
+    delete [] mirror;
 	
 	Array<int>	arr1(3);
 	
 	arr1[1] = 42;
 	print_array(arr1, 3);
+
+	// const Array<int>	arr2(3);
+	
+	// arr2[1] = 42;
     return 0;
 }

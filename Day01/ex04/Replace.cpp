@@ -6,7 +6,7 @@
 /*   By: jcalon <jcalon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 18:38:30 by jcalon            #+#    #+#             */
-/*   Updated: 2022/09/07 14:46:19 by jcalon           ###   ########.fr       */
+/*   Updated: 2022/09/08 11:17:15 by jcalon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,29 @@ Replace::~Replace(void)
 
 void      Replace::do_replace(void)
 {
-	for (size_t i = 0; i != std::string::npos; i = _buffer.find(_oldString, i + 1))
+	// size_t	i = 0;
+
+	// while (i != _buffer.length())
+	// {
+		
+	// 	if (_buffer.find(_oldString, i))
+	// 	{
+	// 		std::cout << "cic" << std::endl;
+	// 		_buffer.erase(i, _oldString.length());
+	// 		_buffer.insert(i, _newString);
+	// 		i += _newString.length();
+	// 	}
+	// 	else if (i != std::string::npos)
+	// 		i++;
+	// }
+
+	for (size_t i = 0; i != std::string::npos; i = _buffer.find(_oldString, i))
 	{
-		if (i != std::string::npos && i != 0)
+		if (i != std::string::npos && _buffer.length() != 0)
 		{
 			_buffer.erase(i, _oldString.length());
 			_buffer.insert(i, _newString);
-			i += _oldString.length();
+			i += _newString.length();
 		}
 	}
 }

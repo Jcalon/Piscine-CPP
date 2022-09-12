@@ -6,7 +6,7 @@
 /*   By: jcalon <jcalon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 15:38:09 by jcalon            #+#    #+#             */
-/*   Updated: 2022/08/30 17:33:36 by jcalon           ###   ########.fr       */
+/*   Updated: 2022/09/11 19:29:02 by jcalon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 Span::Span(void) : _size(0)
 {
-
+	_vector.assign(0, 0);
 }
 
 Span::Span(unsigned int size) : _size(size)
@@ -25,6 +25,7 @@ Span::Span(unsigned int size) : _size(size)
 
 Span::Span(Span const &src) : _size(src.getSize())
 {
+	_vector.assign(src._vector.begin(), src._vector.end());
 	*this = src;
 }
 

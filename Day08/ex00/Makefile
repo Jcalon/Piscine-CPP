@@ -6,7 +6,7 @@
 #    By: jcalon <jcalon@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/09 16:52:15 by jcalon            #+#    #+#              #
-#    Updated: 2022/08/30 14:53:55 by jcalon           ###   ########.fr        #
+#    Updated: 2022/09/11 17:57:17 by jcalon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,19 +20,19 @@ CC 		= c++
 CFLAGS 	= -Wall -Wextra -Werror -std=c++98
 
 .cpp.o:
-		@${CC} ${CFLAGS} -c -o $@ $<
+		${CC} ${CFLAGS} -c -o $@ $<
 
 all: 	${NAME}
 
 ${NAME}: ${OBJS}
-		@$(CC) $(CFLAGS) ${OBJS} -o ${NAME}
+		$(CC) $(CFLAGS) ${OBJS} -o ${NAME}
 		@echo "\nCompiled!\n"
 
 clean:
-		@rm -f ${OBJS}
+		rm -f ${OBJS}
 
 fclean: clean
-		@rm -f $(NAME)
+		rm -f $(NAME)
 		@echo "\nDeleting EVERYTHING!\n"
 
 re:		fclean all
